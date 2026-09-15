@@ -111,13 +111,14 @@ nav,
 body,
 html {
   width: 100%;
-  font-size: 18px;
+  font-size: clamp(1rem, 1.4rem, 1.125rem);
   color: #4d4d4d;
+  transition: background-color 250ms ease, color 250ms ease;
 }
 p {
   letter-spacing: 0.1px;
   line-height: 1.8;
-  margin: 20px 0;
+  margin: 24px 0;
 }
 p a {
   text-decoration: underline;
@@ -126,16 +127,17 @@ h1,
 h2,
 h3 {
   font-weight: 800;
-  margin: 32px 0 20px;
+  margin: 32px 0 24px;
 }
 h4,
 h5,
 h6 {
   font-weight: 500;
-  margin: 20px 0;
+  margin: 24px 0;
 }
 a {
   color: #ce2323;
+  transition: color 150ms ease;
 }
 a:hover,
 a:focus {
@@ -156,17 +158,18 @@ a.nav-back img:focus {
 }
 hr.small {
   max-width: 100px;
-  margin: 20px auto;
+  margin: 24px auto;
   border-width: 4px;
   border-color: #fff;
 }
 a.nav-back {
-  position: absolute;
+  position: fixed;
   top: 15px;
   left: 15px;
   color: rgba(0,0,0,0.5);
   z-index: 99;
   cursor: pointer;
+  transition: color 150ms ease;
 }
 a.nav-back:hover,
 a.nav-back:focus {
@@ -176,7 +179,7 @@ a.nav-back .nav-back-icon {
   width: 24px;
   height: 24px;
   display: block;
-  transition: opacity 0.3s ease;
+  transition: opacity 250ms ease;
 }
 a.nav-back:hover .nav-back-icon,
 a.nav-back:focus .nav-back-icon {
@@ -193,19 +196,19 @@ nav {
   width: 100%;
   height: 100%;
   position: relative;
-  margin: 80px auto 0;
+  margin: 96px auto 0;
 }
 .intro-header {
   background-color: transparent;
   background: no-repeat center center;
   background-attachment: scroll;
   background-size: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 48px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
-  padding: 100px 0 20px;
+  padding: 100px 0 24px;
   color: #4d4d4d;
 }
 .intro-header .site-heading.archives,
@@ -221,44 +224,44 @@ nav {
 .intro-header .site-heading h1,
 .intro-header .page-heading h1 {
   margin-top: 0;
-  font-size: 2em;
+  font-size: clamp(1.75rem, 2.75rem, 2.25rem);
   color: #ce2323;
 }
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
-  font-size: 24px;
-  line-height: 1.1;
+  font-size: clamp(1.125rem, 1.625rem, 1.375rem);
+  line-height: 1.4;
   display: block;
   font-weight: 300;
-  margin: 10px 0 0;
+  margin: 16px 0 0;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 2.2em;
+    font-size: clamp(2.25rem, 3.75rem, 3rem);
   }
 }
 .intro-header .post-heading h1 {
-  font-size: 35px;
+  font-size: clamp(1.375rem, 2.075rem, 1.75rem);
 }
 .intro-header .post-heading .subheading {
-  line-height: 1.1;
+  line-height: 1.4;
   display: block;
-  font-size: 24px;
-  margin: 10px 0 30px;
+  font-size: clamp(1.125rem, 1.625rem, 1.375rem);
+  margin: 16px 0 32px;
   font-weight: 600;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
-    font-size: 55px;
+    font-size: clamp(2.25rem, 3.75rem, 3rem);
   }
   .intro-header .post-heading .subheading {
-    font-size: 30px;
+    font-size: clamp(1.375rem, 2.075rem, 1.75rem);
   }
 }
 .post-preview {
   position: relative;
-  padding: 25px 0 35px;
+  padding: 24px 0 48px;
   min-height: 14em;
   overflow: hidden;
   clear: both;
@@ -269,15 +272,15 @@ nav {
 .post-preview p {
   margin-left: 36%;
   padding-left: 0.6em;
-  font-size: 1.1em;
-  line-height: 1.5;
+  font-size: clamp(1.125rem, 1.625rem, 1.375rem);
+  line-height: 1.6;
 }
 .post-preview blockquote {
   margin-left: 36%;
   padding: 0.7em;
-  margin-top: 10px;
+  margin-top: 16px;
   border: none;
-  font-size: 1em;
+  font-size: clamp(1rem, 1.4rem, 1.125rem);
 }
 .post-preview blockquote p {
   margin: 0;
@@ -287,6 +290,7 @@ nav {
   width: 100%;
   height: 100%;
   color: #4d4d4d;
+  transition: color 250ms ease;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
@@ -300,55 +304,57 @@ nav {
   float: left;
   width: 32%;
   height: 100%;
-  font-size: 2em;
-  margin: 21px 0;
+  font-size: clamp(1.75rem, 2.75rem, 2.25rem);
+  margin: 24px 0;
   word-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  transition: color 250ms ease;
 }
 .post-preview > a > .post-title.archive {
-  font-size: 22px;
+  font-size: clamp(1.125rem, 1.625rem, 1.375rem);
   width: 100%;
 }
 .post-preview img {
   display: none;
 }
 .section-heading {
-  font-size: 36px;
+  font-size: clamp(1.75rem, 2.75rem, 2.25rem);
   margin-top: 60px;
   font-weight: 700;
 }
 .caption {
   text-align: center;
-  font-size: 14px;
-  padding: 10px;
+  font-size: clamp(0.875rem, 1.175rem, 1rem);
+  padding: 16px;
   font-style: italic;
   margin: 0;
   display: block;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .post-content {
   padding-bottom: 100px;
 }
 .post-meta {
-  padding-top: 50px;
+  padding-top: 48px;
 }
 .post-tags,
 .post-categories,
 .post-date {
   text-align: right;
-  font-size: 1em;
-  margin: 10px 0;
+  font-size: clamp(1rem, 1.4rem, 1.125rem);
+  margin: 16px 0;
 }
 .post-tags a,
 .post-categories a,
 .post-date a {
   text-transform: uppercase;
   color: #ce2323;
+  transition: color 150ms ease;
 }
 .post-tags a:hover,
 .post-categories a:hover,
@@ -362,18 +368,18 @@ nav {
   text-decoration: none;
 }
 .archive-before-pagination {
-  height: 50px;
+  height: 48px;
 }
 .comment {
-  margin: 20px 0 100px;
+  margin: 24px 0 100px;
 }
 footer {
-  padding: 50px 0 65px;
+  padding: 48px 0 65px;
   color: rgba(0,0,0,0.5);
   text-align: center;
 }
 .floating-label-form-group {
-  font-size: 14px;
+  font-size: clamp(0.875rem, 1.175rem, 1rem);
   position: relative;
   margin-bottom: 0;
   padding-bottom: 0.5em;
@@ -387,7 +393,7 @@ footer {
   padding-left: 0;
   border: none;
   border-radius: 0;
-  font-size: 1.5em;
+  font-size: clamp(1.375rem, 2.075rem, 1.75rem);
   background: none;
   box-shadow: none !important;
   resize: none;
@@ -403,10 +409,7 @@ footer {
   vertical-align: middle;
   vertical-align: baseline;
   opacity: 0;
-  -webkit-transition: top 0.3s ease, opacity 0.3s ease;
-  -moz-transition: top 0.3s ease, opacity 0.3s ease;
-  -ms-transition: top 0.3s ease, opacity 0.3s ease;
-  transition: top 0.3s ease, opacity 0.3s ease;
+  transition: top 250ms ease, opacity 250ms ease;
 }
 .floating-label-form-group::not(:first-child) {
   padding-left: 14px;
@@ -417,27 +420,28 @@ footer {
   opacity: 1;
 }
 .floating-label-form-group-with-focus label {
-  color: rgba(224,71,71,0.9);
+  color: #ce2323;
 }
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid rgba(235,235,235,0.8);
 }
 .btn {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: clamp(0.875rem, 1.175rem, 1rem);
   font-weight: 800;
   letter-spacing: 1px;
   border-radius: 0;
-  padding: 15px 25px;
+  padding: 15px 24px;
+  transition: all 250ms ease;
 }
 .btn-lg {
-  font-size: 16px;
-  padding: 25px 35px;
+  font-size: clamp(1rem, 1.4rem, 1.125rem);
+  padding: 24px 48px;
 }
 .btn-default:hover,
 .btn-default:focus {
-  background-color: rgba(224,71,71,0.9);
-  border: 1px solid rgba(224,71,71,0.9);
+  background-color: #ce2323;
+  border: 1px solid #ce2323;
   color: #fff;
 }
 .pagiantion {
@@ -453,13 +457,14 @@ form .row:first-child .floating-label-form-group {
 .pagiantion li > a,
 .pagiantion li > span {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: clamp(0.875rem, 1.175rem, 1rem);
   font-weight: 800;
   letter-spacing: 1px;
-  padding: 15px 25px;
+  padding: 15px 24px;
   color: rgba(0,0,0,0.5);
   border: none;
   border-radius: none;
+  transition: color 250ms ease;
 }
 .pagiantion li > a:hover,
 .pagiantion li > a:focus {
@@ -477,12 +482,12 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: #fff;
   text-shadow: none;
-  background: rgba(224,71,71,0.9);
+  background: #ce2323;
 }
 ::selection {
   color: #fff;
   text-shadow: none;
-  background: rgba(224,71,71,0.9);
+  background: #ce2323;
 }
 img::selection {
   color: #fff;
@@ -493,7 +498,13 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: rgba(224,71,71,0.9);
+  webkit-tap-highlight-color: #ce2323;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 .transition-all {
   -webkit-transition: all 0.5s;
@@ -590,15 +601,25 @@ body {
 }
 article .container .row img {
   position: relative;
-  margin: 30px auto;
-  max-width: 55% !important;
+  margin: 32px auto;
+  max-width: clamp(320px, 55%, 800px) !important;
   height: auto;
   display: inline-block;
-  box-shadow: 0 0 0 5px #fff, 0 0 15px 0 #4d4d4d;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  transition: box-shadow 250ms ease, transform 250ms ease;
 }
-@media only screen and (max-width: 768px) {
+article .container .row img:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+@media only screen and (max-width: 480px) {
   article .container .row img {
-    max-width: 80% !important;
+    max-width: 90% !important;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  article .container .row img {
+    max-width: 75% !important;
   }
 }
 article .container .row .video-container {
@@ -619,17 +640,19 @@ article .container .row .video-container embed {
   margin-top: 0;
 }
 article .container .row blockquote {
-  font-family: "Georgia", serif;
-  font-size: 1em;
-  padding: 3px 30px 15px;
-  color: rgba(115,115,115,0.9);
+  font-family: "Noto Serif", "Georgia", "Times New Roman", serif;
+  font-size: clamp(1rem, 1.4rem, 1.125rem);
+  padding: 3px 32px 15px;
+  color: rgba(0,0,0,0.5);
   text-align: left;
+  border-left: 3px solid rgba(0,0,0,0.15);
+  margin: 24px 0;
 }
 article .container .row blockquote footer {
   border-top: none;
-  font-size: 0.8em;
+  font-size: clamp(0.875rem, 1.175rem, 1rem);
   line-height: 1;
-  margin: 20px 0 0;
+  margin: 24px 0 0;
   padding-top: 0;
 }
 article .container .row blockquote footer cite:before {
@@ -644,7 +667,7 @@ article .container .row .pullquote {
   margin: 1em 0 0.5em 1.5em;
   text-align: left;
   width: 45%;
-  font-size: 1.5em;
+  font-size: clamp(1.375rem, 2.075rem, 1.75rem);
 }
 article .container .row .pullquote.left {
   float: left;
@@ -654,7 +677,7 @@ article .container .row ul {
   line-height: 1.8;
 }
 figure.highlight {
-  background: #eee;
+  background: #f5f5f5;
   border: 1px solid #eee;
   margin-top: 15px;
   padding: 7px 15px;
@@ -663,11 +686,11 @@ figure.highlight {
   line-height: 1.6;
   overflow: auto;
   position: relative;
-  font-size: 0.9em;
+  font-size: clamp(0.875rem, 1.175rem, 1rem);
 }
 figure.highlight figcaption {
   color: #ccc;
-  font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   margin-bottom: 5px;
   text-shadow: 0 0 1px #fff;
 }
@@ -694,13 +717,13 @@ figure.highlight table .gutter {
 figure.highlight table .code {
   padding-left: 15px;
   border-left: 1px solid #fff;
-  color: #666;
+  color: rgba(0,0,0,0.5);
 }
 figure.highlight table .line {
   height: 20px;
 }
 figure.highlight table .line.marked {
-  background: #d6d6d6;
+  background: #eee;
 }
 pre .comment,
 pre .template_comment,
@@ -709,7 +732,7 @@ pre .doctype,
 pre .pi,
 pre .lisp .string,
 pre .javadoc {
-  color: #93a1a1;
+  color: #ccc;
   font-style: italic;
 }
 pre .keyword,
@@ -719,19 +742,7 @@ pre .addition,
 pre .css .tag,
 pre .request,
 pre .status,
-pre .nginx .title {
-  color: #859900;
-}
-pre .number,
-pre .command,
-pre .string,
-pre .tag .value,
-pre .phpdoc,
-pre .tex .formula,
-pre .regexp,
-pre .hexcolor {
-  color: #2aa198;
-}
+pre .nginx .title,
 pre .title,
 pre .localvars,
 pre .chunk,
@@ -740,19 +751,7 @@ pre .built_in,
 pre .identifier,
 pre .vhdl,
 pre .literal,
-pre .id {
-  color: #268bd2;
-}
-pre .attribute,
-pre .variable,
-pre .lisp .body,
-pre .smalltalk .number,
-pre .constant,
-pre .class .title,
-pre .parent,
-pre .haskell .type {
-  color: #b58900;
-}
+pre .id,
 pre .preprocessor,
 pre .preprocessor .keyword,
 pre .shebang,
@@ -765,10 +764,28 @@ pre .important,
 pre .subst,
 pre .cdata,
 pre .clojure .title {
-  color: #cb4b16;
+  color: #ce2323;
+}
+pre .number,
+pre .command,
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula,
+pre .regexp,
+pre .hexcolor,
+pre .attribute,
+pre .variable,
+pre .lisp .body,
+pre .smalltalk .number,
+pre .constant,
+pre .class .title,
+pre .parent,
+pre .haskell .type {
+  color: #e45e5e;
 }
 pre .deletion {
-  color: #dc322f;
+  color: #b91f1f;
 }
 .blob-num {
   border: none !important;
@@ -926,116 +943,303 @@ td {
   color: #ce2323;
   text-decoration: none;
 }
+:root[data-theme="dark"] {
+  --bg-color: #1a1d23;
+  --font-color: #e3e6eb;
+  --link-color: #ef8686;
+  --line-color: #2e3440;
+  --surface-elevated: #242831;
+  --code-bg: #242831;
+  --shadow-color: rgba(0,0,0,0.3);
+}
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #222831;
-    --font-color: #94a1b4;
-    --link-color: #a7dfe4;
-    --line-color: #161d27;
+  :root:not([data-theme="light"]) {
+    --bg-color: #1a1d23;
+    --font-color: #e3e6eb;
+    --link-color: #ef8686;
+    --line-color: #2e3440;
+    --surface-elevated: #242831;
+    --code-bg: #242831;
+    --shadow-color: rgba(0,0,0,0.3);
   }
-  a .fa-camera-retro,
-  a .fa-search {
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="dark"] a .fa-camera-retro,
+  :root:not([data-theme="light"]) a .fa-camera-retro,
+  :root[data-theme="dark"] a .fa-search,
+  :root:not([data-theme="light"]) a .fa-search {
     color: var(--font-color);
   }
-  a:focus .fa-camera-retro,
-  a:hover .fa-camera-retro,
-  a:focus .fa-search,
-  a:hover .fa-search {
+  :root[data-theme="dark"] a:focus .fa-camera-retro,
+  :root:not([data-theme="light"]) a:focus .fa-camera-retro,
+  :root[data-theme="dark"] a:hover .fa-camera-retro,
+  :root:not([data-theme="light"]) a:hover .fa-camera-retro,
+  :root[data-theme="dark"] a:focus .fa-search,
+  :root:not([data-theme="light"]) a:focus .fa-search,
+  :root[data-theme="dark"] a:hover .fa-search,
+  :root:not([data-theme="light"]) a:hover .fa-search {
     color: var(--link-color);
   }
-  body {
+  :root[data-theme="dark"] body,
+  :root:not([data-theme="light"]) body {
     color: var(--font-color);
     background: var(--bg-color);
   }
-  .modal-content {
+  :root[data-theme="dark"] .modal-content,
+  :root:not([data-theme="light"]) .modal-content {
     color: var(--font-color);
     background: var(--bg-color);
     border-bottom: 1px solid var(--font-color);
     box-shadow: none;
   }
-  .modal-content .form-control {
+  :root[data-theme="dark"] .modal-content .form-control,
+  :root:not([data-theme="light"]) .modal-content .form-control {
     color: var(--font-color);
     background: var(--bg-color);
     caret-color: var(--link-color);
   }
-  .modal-content .search-result-list .search-result-title {
+  :root[data-theme="dark"] .modal-content .search-result-list .search-result-title,
+  :root:not([data-theme="light"]) .modal-content .search-result-list .search-result-title {
     color: var(--link-color);
   }
-  .modal-content .search-result-list .search-result-title:focus,
-  .modal-content .search-result-list .search-result-title:hover {
+  :root[data-theme="dark"] .modal-content .search-result-list .search-result-title:focus,
+  :root:not([data-theme="light"]) .modal-content .search-result-list .search-result-title:focus,
+  :root[data-theme="dark"] .modal-content .search-result-list .search-result-title:hover,
+  :root:not([data-theme="light"]) .modal-content .search-result-list .search-result-title:hover {
     color: var(--link-color);
   }
-  .modal-content .search-result-list .search-result {
+  :root[data-theme="dark"] .modal-content .search-result-list .search-result,
+  :root:not([data-theme="light"]) .modal-content .search-result-list .search-result {
     color: var(--font-color);
   }
-  .modal-content .search-result-list .search-result .search-keyword {
+  :root[data-theme="dark"] .modal-content .search-result-list .search-result .search-keyword,
+  :root:not([data-theme="light"]) .modal-content .search-result-list .search-result .search-keyword {
     color: var(--link-color);
   }
-  .post-heading h1,
-  .intro-header .site-heading h1 {
+  :root[data-theme="dark"] .post-heading h1,
+  :root:not([data-theme="light"]) .post-heading h1,
+  :root[data-theme="dark"] .intro-header .site-heading h1,
+  :root:not([data-theme="light"]) .intro-header .site-heading h1 {
     color: var(--font-color);
   }
-  a,
-  p a,
-  .pagiantion li > a,
-  #article-toc-inner .toc-link {
+  :root[data-theme="dark"] a,
+  :root:not([data-theme="light"]) a,
+  :root[data-theme="dark"] p a,
+  :root:not([data-theme="light"]) p a,
+  :root[data-theme="dark"] .pagiantion li > a,
+  :root:not([data-theme="light"]) .pagiantion li > a,
+  :root[data-theme="dark"] #article-toc-inner .toc-link,
+  :root:not([data-theme="light"]) #article-toc-inner .toc-link {
     color: var(--font-color);
     text-decoration: none;
   }
-  a:focus,
-  p a:focus,
-  .pagiantion li > a:focus,
-  #article-toc-inner .toc-link:focus,
-  a:hover,
-  p a:hover,
-  .pagiantion li > a:hover,
-  #article-toc-inner .toc-link:hover,
-  a:visited,
-  p a:visited,
-  .pagiantion li > a:visited,
-  #article-toc-inner .toc-link:visited,
-  a:link,
-  p a:link,
-  .pagiantion li > a:link,
-  #article-toc-inner .toc-link:link {
+  :root[data-theme="dark"] a:focus,
+  :root:not([data-theme="light"]) a:focus,
+  :root[data-theme="dark"] p a:focus,
+  :root:not([data-theme="light"]) p a:focus,
+  :root[data-theme="dark"] .pagiantion li > a:focus,
+  :root:not([data-theme="light"]) .pagiantion li > a:focus,
+  :root[data-theme="dark"] #article-toc-inner .toc-link:focus,
+  :root:not([data-theme="light"]) #article-toc-inner .toc-link:focus,
+  :root[data-theme="dark"] a:hover,
+  :root:not([data-theme="light"]) a:hover,
+  :root[data-theme="dark"] p a:hover,
+  :root:not([data-theme="light"]) p a:hover,
+  :root[data-theme="dark"] .pagiantion li > a:hover,
+  :root:not([data-theme="light"]) .pagiantion li > a:hover,
+  :root[data-theme="dark"] #article-toc-inner .toc-link:hover,
+  :root:not([data-theme="light"]) #article-toc-inner .toc-link:hover,
+  :root[data-theme="dark"] a:visited,
+  :root:not([data-theme="light"]) a:visited,
+  :root[data-theme="dark"] p a:visited,
+  :root:not([data-theme="light"]) p a:visited,
+  :root[data-theme="dark"] .pagiantion li > a:visited,
+  :root:not([data-theme="light"]) .pagiantion li > a:visited,
+  :root[data-theme="dark"] #article-toc-inner .toc-link:visited,
+  :root:not([data-theme="light"]) #article-toc-inner .toc-link:visited,
+  :root[data-theme="dark"] a:link,
+  :root:not([data-theme="light"]) a:link,
+  :root[data-theme="dark"] p a:link,
+  :root:not([data-theme="light"]) p a:link,
+  :root[data-theme="dark"] .pagiantion li > a:link,
+  :root:not([data-theme="light"]) .pagiantion li > a:link,
+  :root[data-theme="dark"] #article-toc-inner .toc-link:link,
+  :root:not([data-theme="light"]) #article-toc-inner .toc-link:link {
     color: var(--link-color);
   }
-  .post-tags a {
+  :root[data-theme="dark"] .post-tags a,
+  :root:not([data-theme="light"]) .post-tags a {
     color: var(--link-color);
   }
-  .post-tags a:focus,
-  .post-tags a:hover {
+  :root[data-theme="dark"] .post-tags a:focus,
+  :root:not([data-theme="light"]) .post-tags a:focus,
+  :root[data-theme="dark"] .post-tags a:hover,
+  :root:not([data-theme="light"]) .post-tags a:hover {
     color: var(--link-color);
   }
-  .post-preview a {
+  :root[data-theme="dark"] .post-preview a,
+  :root:not([data-theme="light"]) .post-preview a {
     color: var(--font-color);
   }
-  .post-preview a:focus .post-title,
-  .post-preview a:hover .post-title {
+  :root[data-theme="dark"] .post-preview a:focus .post-title,
+  :root:not([data-theme="light"]) .post-preview a:focus .post-title,
+  :root[data-theme="dark"] .post-preview a:hover .post-title,
+  :root:not([data-theme="light"]) .post-preview a:hover .post-title {
     color: var(--link-color);
   }
-  figure.highlight {
-    background-color: var(--bg-color);
+  :root[data-theme="dark"] figure.highlight,
+  :root:not([data-theme="light"]) figure.highlight {
+    background-color: var(--code-bg);
     color: var(--font-color);
     border-color: var(--line-color);
     text-shadow: var(--bg-color) 0px 0px 1px;
   }
-  figure.highlight table .line {
+  :root[data-theme="dark"] figure.highlight table .line,
+  :root:not([data-theme="light"]) figure.highlight table .line {
     color: var(--font-color);
   }
-  code {
-    color: var(--font-color);
-    background-color: #273435;
+  :root[data-theme="dark"] figure.highlight .gutter,
+  :root:not([data-theme="light"]) figure.highlight .gutter {
+    border-right-color: var(--line-color);
   }
-  article .container .row blockquote {
+  :root[data-theme="dark"] figure.highlight .code,
+  :root:not([data-theme="light"]) figure.highlight .code {
+    border-left-color: var(--bg-color);
+  }
+  :root[data-theme="dark"] code,
+  :root:not([data-theme="light"]) code {
+    color: var(--font-color);
+    background-color: var(--code-bg);
+  }
+  :root[data-theme="dark"] article .container .row blockquote,
+  :root:not([data-theme="light"]) article .container .row blockquote {
     color: var(--font-color);
     background: var(--line-color);
+    border-left-color: var(--link-color);
   }
-  article .container .row img {
-    opacity: 0.7;
-    transition: opacity 0.5s ease-in-out;
+  :root[data-theme="dark"] article .container .row img,
+  :root:not([data-theme="light"]) article .container .row img {
+    filter: brightness(0.85);
+    transition: filter 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+    box-shadow: 0 2px 8px var(--shadow-color), 0 1px 2px var(--shadow-color);
   }
-  article .container .row img:hover {
-    opacity: 1;
+  :root[data-theme="dark"] article .container .row img:hover,
+  :root:not([data-theme="light"]) article .container .row img:hover {
+    filter: brightness(1);
+    box-shadow: 0 4px 16px var(--shadow-color), 0 2px 4px var(--shadow-color);
+  }
+  :root[data-theme="dark"] pre .comment,
+  :root:not([data-theme="light"]) pre .comment,
+  :root[data-theme="dark"] pre .template_comment,
+  :root:not([data-theme="light"]) pre .template_comment,
+  :root[data-theme="dark"] pre .diff .header,
+  :root:not([data-theme="light"]) pre .diff .header,
+  :root[data-theme="dark"] pre .doctype,
+  :root:not([data-theme="light"]) pre .doctype,
+  :root[data-theme="dark"] pre .pi,
+  :root:not([data-theme="light"]) pre .pi,
+  :root[data-theme="dark"] pre .lisp .string,
+  :root:not([data-theme="light"]) pre .lisp .string,
+  :root[data-theme="dark"] pre .javadoc,
+  :root:not([data-theme="light"]) pre .javadoc {
+    color: #6c7a89;
+  }
+  :root[data-theme="dark"] pre .keyword,
+  :root:not([data-theme="light"]) pre .keyword,
+  :root[data-theme="dark"] pre .winutils,
+  :root:not([data-theme="light"]) pre .winutils,
+  :root[data-theme="dark"] pre .method,
+  :root:not([data-theme="light"]) pre .method,
+  :root[data-theme="dark"] pre .addition,
+  :root:not([data-theme="light"]) pre .addition,
+  :root[data-theme="dark"] pre .css .tag,
+  :root:not([data-theme="light"]) pre .css .tag,
+  :root[data-theme="dark"] pre .request,
+  :root:not([data-theme="light"]) pre .request,
+  :root[data-theme="dark"] pre .status,
+  :root:not([data-theme="light"]) pre .status,
+  :root[data-theme="dark"] pre .nginx .title,
+  :root:not([data-theme="light"]) pre .nginx .title,
+  :root[data-theme="dark"] pre .title,
+  :root:not([data-theme="light"]) pre .title,
+  :root[data-theme="dark"] pre .localvars,
+  :root:not([data-theme="light"]) pre .localvars,
+  :root[data-theme="dark"] pre .chunk,
+  :root:not([data-theme="light"]) pre .chunk,
+  :root[data-theme="dark"] pre .decorator,
+  :root:not([data-theme="light"]) pre .decorator,
+  :root[data-theme="dark"] pre .built_in,
+  :root:not([data-theme="light"]) pre .built_in,
+  :root[data-theme="dark"] pre .identifier,
+  :root:not([data-theme="light"]) pre .identifier,
+  :root[data-theme="dark"] pre .vhdl,
+  :root:not([data-theme="light"]) pre .vhdl,
+  :root[data-theme="dark"] pre .literal,
+  :root:not([data-theme="light"]) pre .literal,
+  :root[data-theme="dark"] pre .id,
+  :root:not([data-theme="light"]) pre .id,
+  :root[data-theme="dark"] pre .preprocessor,
+  :root:not([data-theme="light"]) pre .preprocessor,
+  :root[data-theme="dark"] pre .preprocessor .keyword,
+  :root:not([data-theme="light"]) pre .preprocessor .keyword,
+  :root[data-theme="dark"] pre .shebang,
+  :root:not([data-theme="light"]) pre .shebang,
+  :root[data-theme="dark"] pre .symbol,
+  :root:not([data-theme="light"]) pre .symbol,
+  :root[data-theme="dark"] pre .symbol .string,
+  :root:not([data-theme="light"]) pre .symbol .string,
+  :root[data-theme="dark"] pre .diff .change,
+  :root:not([data-theme="light"]) pre .diff .change,
+  :root[data-theme="dark"] pre .special,
+  :root:not([data-theme="light"]) pre .special,
+  :root[data-theme="dark"] pre .attr_selector,
+  :root:not([data-theme="light"]) pre .attr_selector,
+  :root[data-theme="dark"] pre .important,
+  :root:not([data-theme="light"]) pre .important,
+  :root[data-theme="dark"] pre .subst,
+  :root:not([data-theme="light"]) pre .subst,
+  :root[data-theme="dark"] pre .cdata,
+  :root:not([data-theme="light"]) pre .cdata,
+  :root[data-theme="dark"] pre .clojure .title,
+  :root:not([data-theme="light"]) pre .clojure .title {
+    color: #f4a7a7;
+  }
+  :root[data-theme="dark"] pre .number,
+  :root:not([data-theme="light"]) pre .number,
+  :root[data-theme="dark"] pre .command,
+  :root:not([data-theme="light"]) pre .command,
+  :root[data-theme="dark"] pre .string,
+  :root:not([data-theme="light"]) pre .string,
+  :root[data-theme="dark"] pre .tag .value,
+  :root:not([data-theme="light"]) pre .tag .value,
+  :root[data-theme="dark"] pre .phpdoc,
+  :root:not([data-theme="light"]) pre .phpdoc,
+  :root[data-theme="dark"] pre .tex .formula,
+  :root:not([data-theme="light"]) pre .tex .formula,
+  :root[data-theme="dark"] pre .regexp,
+  :root:not([data-theme="light"]) pre .regexp,
+  :root[data-theme="dark"] pre .hexcolor,
+  :root:not([data-theme="light"]) pre .hexcolor,
+  :root[data-theme="dark"] pre .attribute,
+  :root:not([data-theme="light"]) pre .attribute,
+  :root[data-theme="dark"] pre .variable,
+  :root:not([data-theme="light"]) pre .variable,
+  :root[data-theme="dark"] pre .lisp .body,
+  :root:not([data-theme="light"]) pre .lisp .body,
+  :root[data-theme="dark"] pre .smalltalk .number,
+  :root:not([data-theme="light"]) pre .smalltalk .number,
+  :root[data-theme="dark"] pre .constant,
+  :root:not([data-theme="light"]) pre .constant,
+  :root[data-theme="dark"] pre .class .title,
+  :root:not([data-theme="light"]) pre .class .title,
+  :root[data-theme="dark"] pre .parent,
+  :root:not([data-theme="light"]) pre .parent,
+  :root[data-theme="dark"] pre .haskell .type,
+  :root:not([data-theme="light"]) pre .haskell .type {
+    color: #f8c8c8;
+  }
+  :root[data-theme="dark"] pre .deletion,
+  :root:not([data-theme="light"]) pre .deletion {
+    color: #ff6b6b;
   }
 }
