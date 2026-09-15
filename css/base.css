@@ -149,6 +149,10 @@ a img:hover,
 a img:focus {
   cursor: zoom-in;
 }
+a.nav-back img:hover,
+a.nav-back img:focus {
+  cursor: pointer;
+}
 hr.small {
   max-width: 100px;
   margin: 20px auto;
